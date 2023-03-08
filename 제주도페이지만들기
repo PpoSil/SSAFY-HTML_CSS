@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="card.css">
+    <title>Layout</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .big-box {
+            position: relative;
+            width: 700px;
+            height: 700px;
+            border-style: dotted;
+            border-width: 4px;
+        }
+        .container {
+            width:  800px;
+            margin: 40 auto;
+        }
+        .card {
+            width: 700px;
+            margin: 0 auto; /* 가운데 정렬 */
+            border: 2px dashed black;
+        }
+        .card-nav {
+            text-align: center;
+            background-color: greenyellow;
+        }
+        .card-header {
+            padding: 18px;
+            line-height: 0;
+        }
+        .card-image {
+            /* display: block; */
+            height: 330px;
+            /* 남는 너비를 최대 크기로 바꾸기*/
+            width: 100%;
+        }
+        h4 {
+            font-size: 20px;
+            font-weight: bold;
+            font-family:  Arial;
+        }
+        p {
+            font-family: Arial;
+        }
+        .card-header-desc {
+            background-color: rgb(147, 197, 73);
+            text-align: center;
+            color: white;
+            height: 70px;
+            line-height: 35px;
+        }
+        .card-body {
+            padding: 18px;
+        }
+        .card-body-title {
+            position: relative;
+        }
+        .card-body-title > h4 {
+            display: inline;
+        }
+        .card-body-title > p {
+            display: inline;
+            position: absolute;
+            right: 0;
+        }
+        .card-body-desc {
+            background-color: bisque;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .card-footer {
+            background-color: green;
+            color: white;
+            padding: 10px;
+            text-align: end;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-nav">
+                <h4>오늘의 명소</h4>
+            </div>
+            <div class="card-header">
+                <img src="image.png" class="card-image" alt="제주도 성산일출봉">
+                <div class="card-header-desc">
+                    <h4>제주도</h4>
+                    <h4>성산 일출봉</h4>
+                </div>
+            </div>
+        <div class="card-body">
+            <div class="card-body-title">
+                <h4>제주도 서귀포시 성산읍</h4>
+                <p>2020.03.23</p>
+            </div>
+            <hr>
+            <p class="card-body-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis nam repudiandae ducimus dicta exercitationem quis, cupiditate consequatur sequi vitae quae dolor quo corrupti labore ipsam assumenda ab aliquid. Autem, vel!</p>
+        </div>
+        <div class="card-footer">
+            <p>©️SSAFY</p>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
