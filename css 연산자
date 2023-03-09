@@ -1,0 +1,9 @@
+/* a태그 옆 b태그를 선택 */
+p+p {
+    color:red;
+}
+
+/* a태그 옆 연속으로 붙어있는 b태그 모두 선택 */
+p~span{
+    color:green;
+}
