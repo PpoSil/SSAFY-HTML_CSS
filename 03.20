@@ -1,0 +1,43 @@
+객관: 21개
+단답: 9개
+서술: 2개
+
+총: 32개
+
+[객관 21]
+1. div 태그의 상하 마진 합으로 옳은 것을 고르시오 (css 스타일 주어짐)
+2. css selector 선택자 우선순위가 높은 순서대로(!important, id, class, tag)
+3. bootstrap grid system에서 사용할 수 없는 클래스 접두사(class prefix)를 고르시오
+4. bootstrap의 spacing을 처리하기 위한 클래스 표기법 {property}{sides}-{breakpoint}-{size}에 대한 설명이 잘못된 것을 고르시오
+5. flexbox의 justify-content 속성으로 알맞은 걸 고릇오. (배치 그림이 주어짐)
+6. HTML 속성에 대한 설명 중 옳지 않는 것 고르기(태그에 속성을 넣을 때... 속성을 설정하는 이유에 대해서!)
+7. margin값이 다르게 설정된 요소 고르기+bootstrap (마진 shortend에 관한 내용) 마진에 대해서 값이 여러개 줬을 때 
+8. 글로벌 속성(global attribute)에 해당되는 것들 모두 고르시오
+9. css 정의하는 방법으로 옳지 않은 것
+10. position 속성으로 쓸 수 없는 것
+11. box model의 영역(기본: content -> border)
+12. position absolute에 대한 설명으로 옳은 것
+13. display: flex에 대한 설명으로 옳지 않은 것
+14. block 속성을 가진 요소를 고르시오 (p, div ...)
+15. display: none <-> visibility: hidden의 차이
+16. bootstrap, div tag를 중앙 정렬하는 방법
+17. bootstrap, grid system 12개 영역으로 아이템 배치하는 것에 대한 내용 소개
+18. HTML에 대한 설명으로 올바른 답안 고르기(HTML<- 용어 소개)
+19. HTML element에 대한 설명으로 잘못된 것 고르기
+20. 선택자(selector)에 대한 설명으로 옳지 않은 것 고르기
+21. bootstrap, grid system에 올바른 클래스 속성 넣기
+
+[단답 9] 구멍채우기
+22. box model의 영역에 대한 속성값 넣기
+23. bootstap,grid system: breakpoint에 대한 이해
+24. css 우선순위
+25. bootstrap 클래스 속성 넣기
+26. 레이아웃 유형들에 대한 설명(float, flexbox, grid)
+27. grid system 이 나누는 영역의 갯수
+28. 이것은 컨텐츠를 효율적으로 전달하기 위해 여러 노드를 가진 네트워크에서 데이터를 ~~~~ contents delivery network라고 불리우는 이것을 적으시오.
+29. bootstrap, d-flex 컨테이너가 있는 상황에서 아이템들을 정중앙 정렬하기 위한 속성값을 적으시오.
+30. css 스타일 시트 -> bootstrap 클래스 속성으로 바꿔보시오.(display: block; -> d-block)
+
+[서술 2]
+31. css 스타일을 지정했을 때, 해당 요소가 어떤 색을 가지고 있는지 말하고, 그 이유를 서술하라.(선택자)
+32. bootstrap, grid system을 사용해서 해당 코드를 실행했을 때, 왜 이러한 결과가 나오는지 서술하시오(grid spacing)
