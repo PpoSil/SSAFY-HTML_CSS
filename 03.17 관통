@@ -1,0 +1,29 @@
+- 학습한 내용
+    - 이미지
+        - 이미지에 링크를 넣으려면  a태그에 감싸기
+        - ex) <a href=””><img scr=””></a>
+        - 이미지들 크기 자동으로 맞추려면 width: auto;로 하면 알아서 맞춰짐
+    - 고정
+        - 고정시키려면 position-fixed
+        - 어디에? 밑에!  fixed-bottom!
+    - 모달 사용법
+        - 모달은 가장 밖에 있는게 좋다!
+        - 모달의 id랑 id에 쓰일 텍스트 잘 연결하기
+        - **제일 중요** data-bs-toggle과 data-bs-target을 넣어줘야 함
+        - ex) <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
+    - 그리드: ex) sm== (≤576픽셀) 값이 **이상**임!!
+    
+    ```python
+    <div class="container">
+          <div class="row">
+            <h1 class="text-left">Community</h1>
+            <!-- 992 이상 -->
+            <div class="col-12 col-lg-2 ">
+    ```
+    
+    1. 컨테이너 클래스 만들고 시작하는게 좋음
+    2. row로 감싸고
+    3. col-12(일반적인 크기일 때 12칸 차지) / col-lg-2(lg 크기 이상일 때 12칸 중 2칸 차지)
+    4. 일정 크기 이상에 보이게 하고 싶으면: d-none + d-크기-block
+    5. 일정 크기 미만에 보이게 하고 싶으면: d-block + d-크기-none
+    6. 구역 잘 나눠서 확인하기 구역도 중요!
