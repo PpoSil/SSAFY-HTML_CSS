@@ -1,0 +1,93 @@
+부트스트랩의 그리드 시스템은 반응형 웹 디자인을 할 때 가장 빛을 발합니다.
+
+다음은 부트스트랩에서 정해둔 구간들입니다.
+
+Extra Small (< 576px): 모바일
+Small (≥ 576px): 모바일
+Medium (≥ 768px): 타블릿
+Large (≥ 992px): 데스크탑
+Extra Large (≥ 1200px): 와이드 데스크탑
+컨테이너 (container)
+기본적으로 컨테이너는 가운데 정렬이 되어 있고, 그리드의 행들을 감싸주는 역할을 합니다 (행들은 열들을 감싸주고 있고요!). 컨테이너의 종류는 두 가지인데요.
+
+<div class="container">: 구간별로 그리드에 고정된 width를 설정해줍니다.
+<div class="container-fluid">: 그리드는 항상 width: 100%;입니다.
+<div class="container">
+만약 구간별로 그리드에 고정된 가로값을 설정해주고 싶으면 "container" 클래스를 사용하세요. 구간별로 그리드가 고정되어 있으면 레이아웃이 더 예상 가능합니다. 따라서 저는 개인적으로 "container" 클래스를 사용하는 것을 선호하고, 디자이너에게 이렇게 구간별로 고정되는 방식으로 만들기를 부탁합니다!
+
+"container"클래스를 사용하면 아래의 CSS 코드가 적용됩니다.
+
+.container {
+  width: 100%; /* extra small */
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* small */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+/* medium */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+/* large */
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/* extra large */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+<div class="container-fluid">
+저는 많은 경우에 "container" 클래스를 선호하지만, 상황에 따라 그리드가 항상 100%의 가로 길이를 갖는 것이 좋을 때가 있습니다. 그럴 때는 "container-fluid" 클래스를 사용하면 됩니다.
+
+"container-fluid"클래스를 사용하면 아래의 CSS 코드가 적용됩니다.
+
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+열 (column)
+반응형 구간별로 (총 12칸 중) 열이 차지하는 칸의 개수도 다르게 할 수 있습니다.
+
+예시를 몇 가지 봅시다.
+
+예시 1 (구간별로 모두 설정되어 있는 경우)
+<div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+Extra Small (< 576px): 12칸을 모두 차지
+Small (≥ 576px): 6칸 차지
+Medium (≥ 768px): 4칸 차지
+Large (≥ 992px): 3칸 차지
+Extra Large (≥ 1200px): 2칸 차지
+예시 2 (특정 구간만 설정되어 있는 경우)
+아래와 같이 특정 구간에만 열 수가 설정되어 있는 경우도 있습니다. 그렇다면 그 구간부터 새로운 설정이 있는 상위 구간까지는 같은 칸 수를 차지합니다.
+
+<div class="col-12 col-lg-3">
+Extra Small (< 576px): 12칸을 모두 차지
+Small (≥ 576px): 12칸을 모두 차지
+Medium (≥ 768px): 12칸을 모두 차지
+Large (≥ 992px): 3칸 차지
+Extra Large (≥ 1200px): 3칸 차지
+<div class="col-6">
+Extra Small (< 576px): 6칸 차지
+Small (≥ 576px): 6칸 차지
+Medium (≥ 768px): 6칸 차지
+Large (≥ 992px): 6칸 차지
+Extra Large (≥ 1200px): 6칸 차지
