@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>NEW</h1>
+  <form action="{% url 'articles:create' %}" method="POST">
+    {% comment %} 
+    form 형식에서는 POST가 더 좋음
+    POST 방식으로 데이터를 전달하면 Query String이 아닌 Body에 담겨서 보내짐
+    GET -> url에서 key=value,,,
+    POST -> url 그대로, request안 body에 data가 바뀜
+    C(create: GET) R(read: POST) U(update: ooo) D(delete: ooo)
+    {% endcomment %}
+    {% csrf_token %}
+    {% comment %} csrf_token: 보안 관련 {% endcomment %}
+    <label for="title">Title: </label>
+    <input type="text" name="title" id="title"><br>
+    <label for="content">Content: </label>
+    <input type="text" name="content" id="content"><br>
+    <input type="submit">
+  </form>
+  <hr>
+  <a href="{% url 'articles:index' %}">뒤로가기</a>
+{% endblock content %}
