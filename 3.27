@@ -1,0 +1,79 @@
+# 3.27
+
+1. 230323(목)_코딩 Live 강의 Python 트랙_4_Custom user & Built - in auth form
+(10점) userchange form..? -> 그냥 사용하게 되면 걸리는 오류????
+- Q. 왜 커스텀 모델 만들어서 했는지
+auth.user(장고 내부 유저) -> accounts.user(커스텀 유저)로 바뀌었다고 error
+- A. UserCreationForm과 UserChangeForm 두 폼은 모두 class Meta: model = User(user는 장고 내부의 auth 유저임)가 등록된 form이기 때문에 반드시 커스텀(확장)하여야 함
+
+![수정 전](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/eb0103cd-6fdd-484f-a75b-2068d2ef0c6c/Untitled.png)
+
+수정 전
+
+![수정 후](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f918e520-5c76-4a48-a0ee-927ff1225d10/Untitled.png)
+
+수정 후
+
+- from django.contrib.auth import get_user_model(커스텀을 위한 모듈, 현재 활성화 된 모델을 반환함) 이라는 모듈을 불러와서 아무것도 상속받지 않은 Meta를 UserCreationForm.Meta를 상속받아서 model=get_user_model()로 수정해줘야 커스텀 가능
+
+```jsx
+UserChangeForm 의 
+class CustomUserChangeForm(UserChangeForm):
+	class Meta : 
+		model = User의 user은 장고 내부의 user를 의미하기에 확장(커스텀)을 하려면 
+from django.contrib.auth import get_user_model 모듈을 불러와 아무것도 상속을 받지 않은 Meta에
+Meta(UserCreateFrom.Meta)를 상속받아 model=get.user.model()로 수정을 해줘야 커스텀이 가능해진다
+```
+
+9. (10점) 모델을 수정했을 때 쳐야하는 명령어 2가지
+
+- python [manage.py](http://manage.py/) makemigrations 설명
+    - 파이썬으로 작성된 설계로, 모델의 변경사항에 대한 새로운 migration을 만드는데 사용을 한다
+- python [manage.py](http://manage.py/) migrate 설명
+    - makemigrations로 만든 설계도를 실제 데이터베이스에 반영하는 과정을 말하는데, 모델의 변경사항과 데이터베이스를 동기화하는 작업이다.
+
+1. (10점) settings에 installed apps에 application을 등록해야하는 이유 + template과 연관지어서..?
+-> template-loader postmortem 오류
+borders라는 앱을 등록 안 해서
+    - [settings.py](http://settings.py/) 파일의 installed_apps 부분에 해당 app이 추가되지 않아 app을 인식하지 못하고, 더불어 해당 app 하위에 있는 templates 폴더도 인식을 하지 못해 생기는 오류이다.
+
+디버깅 문제
+
+1. members sign up 회원가입 문제 (10점)
+    1. context에 대한 내용 - 들여쓰기, 내어쓰기
+    
+2. members update 멤버 정보 수정 (10점)
+    1. ModelForm - fields 관련 내용을 담고 있음
+    2. 아마도 fields = ('email', 'username') 이런 식으로 제한?? 
+    
+3. members delete 회원 탈퇴 (5점)
+    1. 로그인 상태에 따라서 조건 처리
+    2. {% if user.is_authenticated %} 
+        
+        {% else %}
+        
+        {% endif %}
+        
+    
+4. navigation menu -> login이면 회원 탈퇴 등등 뜨게 logout상태이면 (10점) - 로그인, 회원가입, 로그아웃 버튼 등등
+    1. 로그인 상태에 따라서 조건 처리
+    2. {% if user.is_authenticated %}  로그인을 햇다면
+        
+        {% else %}
+        
+        {% endif %}
+        
+
+1. shops create(10점) # items create 아이템 생성할 때 error 처리
+    1. routing variables → path(’<int:pk>/update’…)
+2. shops update (5점) 변별력 어려움! # items update 아이템에 대한 업데이트를 어떻게 진행하는지 
+3. shops delete(15점) # items delete 아이템을 삭제했을 때 error -> 보안 오류? csrf token??? 
+    1. form :post 에서 이것이 없으면 에러가 남
+    2. <form action="{% url 'travels:create' %}" method="POST">
+        {% csrf_token %}
+        
+        </form>
+        
+    
+
+[README](https://www.notion.so/README-0c6872d9acec45f6a8f36303d6ce526d)
